@@ -13,9 +13,13 @@ Route::get('/staff', function () {
     return view('staff');
 })->name('staff');
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'backend.dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::view('tambah-agenda', 'backend.addEvent')
+    ->middleware(['auth', 'verified'])
+    ->name('addEvent');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
