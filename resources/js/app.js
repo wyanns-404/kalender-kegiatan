@@ -8,9 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+    initialDate: '2025-05-01',
     initialView: 'dayGridMonth',
     selectable: true,
     events: '/api/events',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
     // events: [
     //   {
     //     title: 'Contoh Kegiatan',
